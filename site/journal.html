@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Журнал прогресса | Социологический мониторинг ППС</title>
+    <meta name="description" content="Дневник выполнения проектной практики неделя за неделей.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <span>МОНИТОРИНГ ППС</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Дашборд</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="members.html">Участники</a></li>
+                    <li><a href="journal.html" class="active">Журнал</a></li>
+                    <li><a href="resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 48px;">
+        <section class="hero-section" style="padding-top: 40px; padding-bottom: 20px;">
+            <h1>Журнал <span>прогресса</span></h1>
+            <p>Хронология выполнения задач, исследований и основных этапов разработки в ходе учебной практики.</p>
+        </section>
+
+        <section class="timeline">
+            <!-- Week 1 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 1 (31.03.2025 - 06.04.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Организационный этап и Git</h3>
+                    <div class="timeline-content">
+                        Формирование команды проекта, определение зон ответственности участников. Выбор темы исследования и ее согласование с ответственным за практику Гневшевым А. Ю. Инициализация локального Git-репозитория и создание базовой структуры.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 2 (07.04.2025 - 13.04.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Методология и проектирование</h3>
+                    <div class="timeline-content">
+                        Разработка социологической анкеты оценки ППС (15 закрытых вопросов по шкале Лайкерта и блок свободных отзывов). Проектирование схемы реляционной базы данных для сохранения профилей студентов, курсов и анкет. Разработка Figma-макетов сайта.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 3 (14.04.2025 - 20.04.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Участие в DataFest 2026 и верстка</h3>
+                    <div class="timeline-content">
+                        Очное участие Сангаджиева М. Г. в технологической конференции <strong>DataFest 2026</strong>. Посещение докладов по применению NLP для разметки эмоционального фона отзывов и прикладной статистике. Начало верстки сайта и разработки ядра HTTP-сервера на сокетах Python.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 4 (21.04.2025 - 27.04.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Промежуточная сдача и оптимизация</h3>
+                    <div class="timeline-content">
+                        Промежуточная защита прогресса выполнения работы. Интеграция графиков Chart.js в дашборд. Добавление в кастомный HTTP-сервер пула потоков (`ThreadPool`) для конкурентной обработки соединений и префиксного роутера (`Trie Router`).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 5 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 5 (28.04.2025 - 04.05.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Изучение LLM и логика форм</h3>
+                    <div class="timeline-content">
+                        Прохождение курсов по ИИ/LLM и подготовка отчета по промпт-инжинирингу. Настройка файлового кэширования (`ETag`) на сервере, сжатия ответов Gzip и поддержки `Range Requests` для медиафайлов. Реализация обработки POST-запросов отправки анкет.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 6 -->
+            <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 6 (05.05.2025 - 11.05.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Анализ данных и тестирование</h3>
+                    <div class="timeline-content">
+                        Проведение корреляционного анализа Пирсона для проверки связи оценок и успеваемости студентов. Рефакторинг и очистка серверного кода `src/main.py` от комментариев. Написание модульных тестов (`src/test_server.py`) и нагрузочное тестирование сервера.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 7 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Неделя 7 (12.05.2025 - 19.05.2025)</div>
+                <div class="glass-card">
+                    <h3 class="timeline-title">Сборка отчетов и сдача</h3>
+                    <div class="timeline-content">
+                        Генерация итоговых отчетов в форматах DOCX и PDF на основе университетских шаблонов и требований ГОСТ 7.32-2017. Завершение оформления репозитория, финальные Git-коммиты. Загрузка материалов практики в СДО (LMS) вуза.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-color); margin-bottom: 8px;">МОСКОВСКИЙ ПОЛИТЕХ</div>
+                <div>Учебная проектная практика 2026</div>
+                <div>Студент: Сангаджиев М. Г. (Группа 251-951)</div>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Дашборд</a>
+                <a href="about.html">О проекте</a>
+                <a href="members.html">Участники</a>
+                <a href="journal.html">Журнал</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

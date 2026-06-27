@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте | Социологический мониторинг ППС</title>
+    <meta name="description" content="Подробное описание методологии, целей, задач и актуальности проекта мониторинга ППС.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <span>МОНИТОРИНГ ППС</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Дашборд</a></li>
+                    <li><a href="about.html" class="active">О проекте</a></li>
+                    <li><a href="members.html">Участники</a></li>
+                    <li><a href="journal.html">Журнал</a></li>
+                    <li><a href="resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 48px;">
+        <section class="glass-card" style="margin-bottom: 48px;">
+            <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 24px; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">О методологии мониторинга</h2>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;">Проект направлен на создание прозрачной цифровой среды взаимодействия студентов и администрации Московского Политеха для оценки эффективности образовательного процесса. Мониторинг позволяет своевременно корректировать образовательные траектории и учебные материалы.</p>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Обратная связь собирается анонимно по завершении изучения дисциплин. Результаты обрабатываются программным модулем и формируются в виде сводных аналитических отчетов для заведующих кафедрами и деканатов.</p>
+        </section>
+
+        <section style="margin-bottom: 64px;">
+            <h3 style="font-size: 1.75rem; text-align: center; margin-bottom: 40px;">Критерии оценки преподавателей</h3>
+            
+            <div class="methodology-grid">
+                <div class="glass-card method-card">
+                    <div class="method-icon">🎓</div>
+                    <h4 class="method-title">Компетентность (PC)</h4>
+                    <p class="method-desc">Оценка глубины знания предмета, интеграция современных индустриальных кейсов, готовность отвечать на технические вопросы студентов.</p>
+                </div>
+                <div class="glass-card method-card">
+                    <div class="method-icon">🗣️</div>
+                    <h4 class="method-title">Мастерство (PM)</h4>
+                    <p class="method-desc">Ясность и логичность подачи материалов, использование интерактивных методов работы в аудитории, структурированность СДО.</p>
+                </div>
+                <div class="glass-card method-card">
+                    <div class="method-icon">⚖️</div>
+                    <h4 class="method-title">Объективность (OT)</h4>
+                    <p class="method-desc">Прозрачность балльно-рейтинговой системы, отсутствие фаворитизма и предвзятости, своевременная проверка заданий.</p>
+                </div>
+                <div class="glass-card method-card">
+                    <div class="method-icon">🤝</div>
+                    <h4 class="method-title">Культура общения (CC)</h4>
+                    <p class="method-desc">Соблюдение норм этики, конструктивный диалог, уважительное отношение к студентам и поддержка при трудностях.</p>
+                </div>
+                <div class="glass-card method-card">
+                    <div class="method-icon">🚀</div>
+                    <h4 class="method-title">Проектная работа (PO)</h4>
+                    <p class="method-desc">Поддержка в определении вех студенческого проекта, качественные ревью, содействие в поиске партнеров.</p>
+                </div>
+                <div class="glass-card method-card">
+                    <div class="method-icon">📊</div>
+                    <h4 class="method-title">Анализ текста (NLP)</h4>
+                    <p class="method-desc">Автоматическое определение эмоциональной окраски текстовых комментариев для быстрого поиска проблемных областей.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass-card" style="margin-bottom: 64px;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 24px;">Статистический расчет рейтинга</h3>
+            <p style="color: var(--text-muted); margin-bottom: 24px;">Итоговая оценка преподавателя рассчитывается по формуле средневзвешенного значения:</p>
+            
+            <div style="background: rgba(0,0,0,0.2); border-radius: var(--radius-sm); padding: 24px; text-align: center; margin-bottom: 24px; border: 1px solid var(--surface-border);">
+                <code style="font-size: 1.25rem; color: var(--primary); font-family: monospace;">R_total = w_1*PC + w_2*PM + w_3*OT + w_4*CC + w_5*PO</code>
+            </div>
+            
+            <p style="color: var(--text-muted);">Где веса распределены следующим образом в соответствии с решением экспертного совета университета:</p>
+            <ul style="list-style-type: none; padding-left: 0; margin-top: 16px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; color: var(--text-muted);">
+                <li>🔹 Компетентность (PC): <strong style="color: var(--text-color);">w_1 = 0.25</strong></li>
+                <li>🔹 Педагогическое мастерство (PM): <strong style="color: var(--text-color);">w_2 = 0.25</strong></li>
+                <li>🔹 Объективность контроля (OT): <strong style="color: var(--text-color);">w_3 = 0.20</strong></li>
+                <li>🔹 Культура общения (CC): <strong style="color: var(--text-color);">w_4 = 0.15</strong></li>
+                <li>🔹 Организация проектов (PO): <strong style="color: var(--text-color);">w_5 = 0.15</strong></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-color); margin-bottom: 8px;">МОСКОВСКИЙ ПОЛИТЕХ</div>
+                <div>Учебная проектная практика 2026</div>
+                <div>Студент: Сангаджиев М. Г. (Группа 251-951)</div>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Дашборд</a>
+                <a href="about.html">О проекте</a>
+                <a href="members.html">Участники</a>
+                <a href="journal.html">Журнал</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

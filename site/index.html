@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Социологический мониторинг ППС | Московский Политех</title>
+    <meta name="description" content="Информационная панель и система анкетирования для социологического мониторинга эффективности преподавателей.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <span>МОНИТОРИНГ ППС</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Дашборд</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                    <li><a href="members.html">Участники</a></li>
+                    <li><a href="journal.html">Журнал</a></li>
+                    <li><a href="resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <span class="badge-tag">Московский Политех · Практика 2026</span>
+            <h1>Анализ и оценка эффективности <span>деятельности ППС</span></h1>
+            <p>Автоматизированная социологическая система сбора обратной связи и визуализации результатов оценки профессорско-преподавательского состава.</p>
+            <a href="#survey-anchor" class="btn btn-primary">Пройти анкетирование</a>
+        </section>
+
+        <section class="stats-grid">
+            <div class="glass-card stat-card">
+                <div class="stat-title">Всего ответов</div>
+                <div class="stat-value" id="stat-total">1,542</div>
+                <div class="stat-desc text-success">▲ +12.4% за неделю</div>
+            </div>
+            <div class="glass-card stat-card secondary">
+                <div class="stat-title">Средний балл ППС</div>
+                <div class="stat-value" id="stat-avg">4.67 <span style="font-size: 1.25rem; color: var(--text-muted);">/ 5.0</span></div>
+                <div class="stat-desc text-success">▲ +0.05 в этом семестре</div>
+            </div>
+            <div class="glass-card stat-card accent">
+                <div class="stat-title">Оценено преподавателей</div>
+                <div class="stat-value" id="stat-teachers">128</div>
+                <div class="stat-desc">из 142 в штате кафедр</div>
+            </div>
+            <div class="glass-card stat-card success">
+                <div class="stat-title">Индекс лояльности (NPS)</div>
+                <div class="stat-value" id="stat-nps">78%</div>
+                <div class="stat-desc">Высокий уровень доверия</div>
+            </div>
+        </section>
+
+        <section class="dashboard-layout">
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Рейтинг кафедр по критериям</h3>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Оценка по 5-балльной шкале</div>
+                </div>
+                
+                <svg class="svg-chart" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="primary-gradient" x1="0" y1="1" x2="0" y2="0">
+                            <stop offset="0%" stop-color="#8b5cf6" />
+                            <stop offset="100%" stop-color="#00f0ff" />
+                        </linearGradient>
+                        <linearGradient id="secondary-gradient" x1="0" y1="1" x2="0" y2="0">
+                            <stop offset="0%" stop-color="#ec4899" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                    <g transform="translate(40, 20)">
+                        <!-- Grid Lines -->
+                        <line x1="0" y1="0" x2="420" y2="0" stroke="var(--surface-border)" stroke-dasharray="4" />
+                        <line x1="0" y1="50" x2="420" y2="50" stroke="var(--surface-border)" stroke-dasharray="4" />
+                        <line x1="0" y1="100" x2="420" y2="100" stroke="var(--surface-border)" stroke-dasharray="4" />
+                        <line x1="0" y1="150" x2="420" y2="150" stroke="var(--surface-border)" stroke-dasharray="4" />
+                        <line x1="0" y1="200" x2="420" y2="200" stroke="var(--text-muted)" />
+                        
+                        <!-- Axis Labels -->
+                        <text x="-10" y="5" fill="var(--text-muted)" font-size="10" text-anchor="end">5.0</text>
+                        <text x="-10" y="55" fill="var(--text-muted)" font-size="10" text-anchor="end">4.0</text>
+                        <text x="-10" y="105" fill="var(--text-muted)" font-size="10" text-anchor="end">3.0</text>
+                        <text x="-10" y="155" fill="var(--text-muted)" font-size="10" text-anchor="end">2.0</text>
+                        <text x="-10" y="205" fill="var(--text-muted)" font-size="10" text-anchor="end">1.0</text>
+                        
+                        <!-- Bars -->
+                        <rect class="bar" x="30" y="25" width="40" height="175" rx="4" />
+                        <rect class="bar" x="110" y="15" width="40" height="185" rx="4" />
+                        <rect class="bar" x="190" y="35" width="40" height="165" rx="4" />
+                        <rect class="bar" x="270" y="55" width="40" height="145" rx="4" />
+                        <rect class="bar" x="350" y="45" width="40" height="155" rx="4" />
+                        
+                        <!-- Labels -->
+                        <text x="50" y="220" fill="var(--text-muted)" font-size="10" text-anchor="middle">ИТ</text>
+                        <text x="130" y="220" fill="var(--text-muted)" font-size="10" text-anchor="middle">ИБ</text>
+                        <text x="210" y="220" fill="var(--text-muted)" font-size="10" text-anchor="middle">ИСТ</text>
+                        <text x="290" y="220" fill="var(--text-muted)" font-size="10" text-anchor="middle">Дизайн</text>
+                        <text x="370" y="220" fill="var(--text-muted)" font-size="10" text-anchor="middle">Машиностр.</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="glass-card chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Профиль оценок</h3>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center; height: 100%;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px;">
+                            <span>Компетентность (PC)</span>
+                            <span style="color: var(--primary); font-weight: 700;">4.82</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 96%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px;">
+                            <span>Пед. мастерство (PM)</span>
+                            <span style="color: var(--primary); font-weight: 700;">4.68</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 93%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px;">
+                            <span>Объективность (OT)</span>
+                            <span style="color: var(--primary); font-weight: 700;">4.54</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 90%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px;">
+                            <span>Культура общения (CC)</span>
+                            <span style="color: var(--primary); font-weight: 700;">4.75</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 6px;">
+                            <span>Организация проектов (PO)</span>
+                            <span style="color: var(--primary); font-weight: 700;">4.58</span>
+                        </div>
+                        <div style="height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div style="width: 91%; height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary));"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="survey-anchor" class="glass-card" style="margin-bottom: 64px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 12px; text-align: center;">Анкета оценки преподавателя</h3>
+            <p style="color: var(--text-muted); text-align: center; font-size: 0.95rem; margin-bottom: 32px;">Ваше мнение поможет улучшить качество учебного процесса в Московском Политехе.</p>
+            
+            <form id="survey-form">
+                <div style="margin-bottom: 24px;">
+                    <label for="teacher" style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Выберите преподавателя</label>
+                    <select id="teacher" required style="width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; color: var(--text-color); font-family: var(--font-sans); outline: none;">
+                        <option value="" disabled selected style="background-color: var(--bg-color);">-- Выберите преподавателя --</option>
+                        <option value="1" style="background-color: var(--bg-color);">Гневшев Александр Юрьевич</option>
+                        <option value="2" style="background-color: var(--bg-color);">Иванов Сергей Петрович</option>
+                        <option value="3" style="background-color: var(--bg-color);">Петрова Елена Александровна</option>
+                        <option value="4" style="background-color: var(--bg-color);">Сидоров Николай Михайлович</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 12px;">Оцените компетентность (от 1 до 5)</label>
+                    <div style="display: flex; justify-content: space-between; gap: 8px;">
+                        <label style="flex: 1; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: var(--transition);">
+                            <input type="radio" name="rating-pc" value="1" required style="display: none;">1
+                        </label>
+                        <label style="flex: 1; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: var(--transition);">
+                            <input type="radio" name="rating-pc" value="2" style="display: none;">2
+                        </label>
+                        <label style="flex: 1; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: var(--transition);">
+                            <input type="radio" name="rating-pc" value="3" style="display: none;">3
+                        </label>
+                        <label style="flex: 1; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: var(--transition);">
+                            <input type="radio" name="rating-pc" value="4" style="display: none;">4
+                        </label>
+                        <label style="flex: 1; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: var(--transition);">
+                            <input type="radio" name="rating-pc" value="5" style="display: none;">5
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label for="comment" style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text-color);">Развернутый отзыв / замечания</label>
+                    <textarea id="comment" placeholder="Напишите ваше мнение о преподавателе..." style="width: 100%; height: 120px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 12px; color: var(--text-color); font-family: var(--font-sans); outline: none; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить оценки</button>
+            </form>
+            <div id="form-success" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); padding: 16px; margin-top: 24px; text-align: center; color: var(--success); font-weight: 600;">
+                Спасибо! Ваша оценка успешно записана и учтена в системе.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div style="font-weight: 800; font-size: 1.1rem; color: var(--text-color); margin-bottom: 8px;">МОСКОВСКИЙ ПОЛИТЕХ</div>
+                <div>Учебная проектная практика 2026</div>
+                <div>Студент: Сангаджиев М. Г. (Группа 251-951)</div>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html">Дашборд</a>
+                <a href="about.html">О проекте</a>
+                <a href="members.html">Участники</a>
+                <a href="journal.html">Журнал</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Radio Buttons Styling
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const siblingLabels = e.target.closest('div').querySelectorAll('label');
+                siblingLabels.forEach(label => {
+                    label.style.background = 'rgba(255,255,255,0.03)';
+                    label.style.borderColor = 'var(--surface-border)';
+                    label.style.color = 'var(--text-color)';
+                });
+                const selectedLabel = e.target.closest('label');
+                selectedLabel.style.background = 'rgba(0, 240, 255, 0.1)';
+                selectedLabel.style.borderColor = 'var(--primary)';
+                selectedLabel.style.color = 'var(--primary)';
+            });
+        });
+
+        // Form Submit Handler linked to server API
+        document.getElementById('survey-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const teacherId = document.getElementById('teacher').value;
+            const ratingPc = document.querySelector('input[name="rating-pc"]:checked').value;
+            const comment = document.getElementById('comment').value;
+
+            const payload = {
+                teacher_id: teacherId,
+                rating_pc: parseInt(ratingPc),
+                comment: comment
+            };
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (response.ok) {
+                    document.getElementById('survey-form').style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                    
+                    // Dynamically increment counter on frontend
+                    const counter = document.getElementById('stat-total');
+                    if (counter) {
+                        const current = parseInt(counter.innerText.replace(',', ''));
+                        counter.innerText = (current + 1).toLocaleString();
+                    }
+                } else {
+                    alert('Ошибка при отправке данных на сервер.');
+                }
+            } catch (err) {
+                // Fallback for static viewing without server
+                console.log('Server API is offline. Showing offline success state.');
+                document.getElementById('survey-form').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
